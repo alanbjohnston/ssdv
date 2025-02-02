@@ -1,3 +1,35 @@
+./ssdv --help
+Usage: ssdv [-e|-d] [-n] [-t <percentage>] [-c <callsign>] [-i <id>] [-q <level>] [<in file>] [<out file>]
+
+  -e Encode JPEG to SSDV packets.
+  -d Decode SSDV packets to JPEG.
+
+  -n Encode packets with no FEC.
+  -t For testing, drops the specified percentage of packets while decoding.
+  -c Set the callign. Accepts A-Z 0-9 and space, up to 6 characters.
+  -i Set the image ID (0-255).
+  -q Set the JPEG quality level (0 to 7, defaults to 4).
+  -v Print data for each packet decoded.
+  -D DSLWP mode.
+  -J JY1SAT mode.
+
+./ssdv -e -c CALLSIGN -i 1 -q 3 -J camera_out.jpg output.bin
+Precision: 8
+Resolution: 320x256
+Components: 3
+DQT table for component 1: 00, Sampling factor: 2x2
+DQT table for component 2: 01, Sampling factor: 1x1
+DQT table for component 3: 01, Sampling factor: 1x1
+MCU blocks: 320
+Components: 3
+Component 1 DHT: 00
+Component 2 DHT: 11
+Component 3 DHT: 11
+ssdv_enc_get_packet said EOI
+Wrote 18 packets
+
+
+
 SSDV - simple command line app for encoding / decoding SSDV image data
 
 Created by Philip Heron <phil@sanslogic.co.uk>
